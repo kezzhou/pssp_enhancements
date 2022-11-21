@@ -45,8 +45,8 @@ It's important to note that many examples downloaded from Bootstrap or the inter
 
 It looks something like: 
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"
 
 We need to edit it accordingly to point it to our local bootstrap.css file: 
 
-<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}"
