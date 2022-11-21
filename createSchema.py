@@ -27,7 +27,6 @@ AZURE_MYSQL_DATABASE = os.getenv("AZURE_MYSQL_DATABASE")
 
 
 ########
-
 db_azure = create_engine(connection_string_azure)
 
 

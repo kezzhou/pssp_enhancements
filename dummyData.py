@@ -16,6 +16,7 @@ AZURE_MYSQL_USER = os.getenv("AZURE_MYSQL_USERNAME")
 AZURE_MYSQL_PASSWORD = os.getenv("AZURE_MYSQL_PASSWORD")
 AZURE_MYSQL_DATABASE = os.getenv("AZURE_MYSQL_DATABASE")
 
+connection_string_azure = 'mysql+pymysql://zhou:ahi2022!@mysql-testenvironment.mysql.database.azure.com:3306/patient_portal'
 db_azure = create_engine(connection_string_azure)
 
 
