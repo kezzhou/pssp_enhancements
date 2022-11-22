@@ -7,13 +7,14 @@ import uuid
 
 load_dotenv()
 
-mysql_username = os.getenv("MYSQL_USERNAME")
-mysql_password = os.getenv("MYSQL_PASSWORD")
-mysql_host = os.getenv("MYSQL_HOST")
+AZURE_MYSQL_USERNAME = os.getenv("AZURE_MYSQL_USERNAME")
+AZURE_MYSQL_PASSWORD = os.getenv("AZURE_MYSQL_PASSWORD")
+AZURE_MYSQL_HOST = os.getenv("AZURE_MYSQL_HOST")
 
 db = SQLAlchemy()
 app = Flask(__name__)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://' + AZURE_MYSQL_USERNAME + ':' + AZURE_MYSQL_PASSWORD + '@' + AZURE_MYSQL_HOST + ':3306/patient_portal'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'sdf#$#dfjkhdf0SDJH0df9fd98343fdfu34rf'
 

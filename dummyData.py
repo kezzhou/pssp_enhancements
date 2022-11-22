@@ -10,13 +10,14 @@ import os
 from faker import Faker
 import random
 
+load_dotenv()
 
-AZURE_MYSQL_HOSTNAME = os.getenv("AZURE_MYSQL_HOSTNAME")
-AZURE_MYSQL_USER = os.getenv("AZURE_MYSQL_USERNAME")
+AZURE_MYSQL_HOST = os.getenv("AZURE_MYSQL_HOST")
+AZURE_MYSQL_USERNAME = os.getenv("AZURE_MYSQL_USERNAME")
 AZURE_MYSQL_PASSWORD = os.getenv("AZURE_MYSQL_PASSWORD")
 AZURE_MYSQL_DATABASE = os.getenv("AZURE_MYSQL_DATABASE")
 
-connection_string_azure = 'mysql+pymysql://zhou:ahi2022!@mysql-testenvironment.mysql.database.azure.com:3306/patient_portal'
+connection_string_azure = f'mysql+pymysql://{AZURE_MYSQL_USERNAME}:{AZURE_MYSQL_PASSWORD}@{AZURE_MYSQL_HOST}:3306/patient_portal'
 db_azure = create_engine(connection_string_azure)
 
 
